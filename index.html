@@ -2,169 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./styles.css">
+    
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-    <nav>
-        <div class="container main-nav">
-            <a href="#" class="logo">
-                Movie Deck
-            </a>
-        </div>
-    </nav>
-    <form class="form">
-        <div class="search_area">
 
-            <input type="text"name="search" placeholder="Search by name">
-            <button id="search"type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-        <div class="selection_area">
-            <button type="submit">Sort by date(oldest to latest)</button>
-            <button type="submit">Sort by rating(least to most)</button>
+    <header class="header">
+        <a href="http://localhost:5500/Project/MovieDeck/" style="text-decoration: none">
+            <h1 class="logo" >Movie Deck</h1>
+        </a>
+    </header>
 
-        </div>
-        <br>
-        <div class="search_by_preference">
+    <!-- search bar -->
 
-            <button type="menu">All</button>
-            <button type="menu">Favorites</button>
-        </div>
-    </form>
-   
-    <section class="main_section">
-        <div class="card_section">
-            <img src="https://images.unsplash.com/photo-1562329265-95a6d7a83440?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1370&q=80" alt="img">
-        <div class="card-body">
-            <h4 class="card-title">
-                card title
-            </h4>
-            <span class="color"><i class="fa-regular fa-heart"></i></span>
-        </div>
-        <div class="overview">
-            <h3>Overview</h3>
-            <p class="card-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. .
-            </p>
-        </div>
+    <div class="search-bar">
+        <input type="search" id="search-input" placeholder="Enter your query" >
+        <input type="button" value="Search"  name="button" id="search-button" />
+    </div>
+
+    <!-- sorting bar -->
+
+    <div class="sorting-options">
+        <button class="soring-button" id="sort-by-date">Sort By date</button>
+        <button class="soring-button" id="sort-by-rating">Sort By Rating</button>
+    </div>
+
+
+    <!-- main section -->
+
+    <div class="main">
+
+        <!-- tabs -->
+
+        <div class="tab">
+            <button id="all-tab" class="all-tab active-tab">All</button>
+            <button id="favorites-tab" class="favorites-tab">Favorites</button>
         </div>
 
-        <div class="card_section">
-            <img src="https://images.unsplash.com/photo-1562329265-95a6d7a83440?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1370&q=80" alt="img">
-        <div class="card-body">
-            <h4 class="card-title">
-                card title
-            </h4>
-            <span class="color"><i class="fa-regular fa-heart"></i></span>
-        </div>
-        <div class="overview">
-            <h3>Overview</h3>
-            <p class="card-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. .
-            </p>
-        </div>
-        </div>
-        <div class="card_section">
-            <img src="https://images.unsplash.com/photo-1562329265-95a6d7a83440?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1370&q=80" alt="img">
-        <div class="card-body">
-            <h4 class="card-title">
-                card title
-            </h4>
-            <span class="color"><i class="fa-regular fa-heart"></i></span>
-        </div>
-        <div class="overview">
-            <h3>Overview</h3>
-            <p class="card-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. .
-            </p>
-        </div>
+
+
+        <!-- main movie list -->
+
+        <div id="movies-card-container"> 
+
         </div>
 
-        <div class="card_section">
-            <img src="https://images.unsplash.com/photo-1562329265-95a6d7a83440?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1370&q=80" alt="img">
-        <div class="card-body">
-            <h4 class="card-title">
-                card title
-            </h4>
-            <span class="color"><i class="fa-regular fa-heart"></i></span>
-        </div>
-        <div class="overview">
-            <h3>Overview</h3>
-            <p class="card-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. .
-            </p>
-        </div>
+        <!-- Pagination -->
+        <div class="pagination">
+            <button id="prev-button">Previous</button>
+            <button id="current-page-button">Current Page: 1</button>
+            <button id="next-button">Next</button>
         </div>
 
-        <div class="card_section">
-            <img src="https://images.unsplash.com/photo-1562329265-95a6d7a83440?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1370&q=80" alt="img">
-        <div class="card-body">
-            <h4 class="card-title">
-                card title
-            </h4>
-            <span class="color"><i class="fa-regular fa-heart"></i></span>
-        </div>
-        <div class="overview">
-            <h3>Overview</h3>
-            <p class="card-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. .
-            </p>
-        </div>
+    </div>
+
+
+    
+    
+    <footer class="footer">
+        
+        <div class="copyright">
+            @ copy right: 1996 Movie Deck 
         </div>
 
-        <div class="card_section">
-            <img src="https://images.unsplash.com/photo-1562329265-95a6d7a83440?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1370&q=80" alt="img">
-        <div class="card-body">
-            <h4 class="card-title">
-                card title
-            </h4>
-            <span class="color"><i class="fa-regular fa-heart"></i></span>
-        </div>
-        <div class="overview">
-            <h3>Overview</h3>
-            <p class="card-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. .
-            </p>
-        </div>
+        <div class="contacts">
+            tel: 01127027251
         </div>
 
-        <div class="card_section">
-            <img src="https://images.unsplash.com/photo-1562329265-95a6d7a83440?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1370&q=80" alt="img">
-        <div class="card-body">
-            <h4 class="card-title">
-                card title
-            </h4>
-            <span class="color"><i class="fa-regular fa-heart"></i></span>
-        </div>
-        <div class="overview">
-            <h3>Overview</h3>
-            <p class="card-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. .
-            </p>
-        </div>
-        </div>
 
-        <div class="card_section">
-            <img src="https://images.unsplash.com/photo-1562329265-95a6d7a83440?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1370&q=80" alt="img">
-        <div class="card-body">
-            <h4 class="card-title">
-                card title
-            </h4>
-            <span class="color"><i class="fa-regular fa-heart"></i></span>
-        </div>
-        <div class="overview">
-            <h3>Overview</h3>
-            <p class="card-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. .
-            </p>
-        </div>
-        </div>
+    </footer>
 
-    </section>
 
-    <script src='./App.js'></script>
-    <script
-      src="https://kit.fontawesome.com/324ae3eb62.js"crossorigin="anonymous"></script>
+    <script src="./App.js"> </script>
+    
 </body>
 </html>
